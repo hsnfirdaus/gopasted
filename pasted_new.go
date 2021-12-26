@@ -40,10 +40,19 @@ func NewHandler(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
-	if len(pasted.Content) > 5000 {
+	if len(pasted.Content) < 10 {
 		response = Error{
 			Error:true,
-			Message:"Konten Maksimal 5000 karakter!",
+			Message:"Konten minimal 10 karakter!",
+		}
+		Response(w,response)
+		return
+	}
+
+	if len(pasted.Content) > 5242880 {
+		response = Error{
+			Error:true,
+			Message:"Konten Maksimal 5242880 karakter!",
 		}
 		Response(w,response)
 		return
