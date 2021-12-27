@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strings"
 	"time"
 	"log"
 	"fmt"
@@ -40,7 +41,11 @@ func NewHandler(w http.ResponseWriter, r *http.Request){
 		return
 	}
 
-	if len(pasted.Content) < 10 {
+	if strings.TrimSpace(pasted.Title) == "" {
+		pasted.Title = "Untitled"
+	}
+
+	if len(strings.TrimSpace(pasted.Content)) < 10 {
 		response = Error{
 			Error:true,
 			Message:"Konten minimal 10 karakter!",
