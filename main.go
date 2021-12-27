@@ -77,7 +77,12 @@ func main(){
 	spa := spaHandler{staticPath: "build", indexPath: "index.html"}
 	r.PathPrefix("/").Handler(spa)
 
-	log.Fatal(http.ListenAndServe(":80",r))
+	log.Println("BINDING PORT :80")
+
+	go http.ListenAndServe(":80",r)
+
+	log.Println("BINDING PORT :443")
+	log.Fatal(http.ListenAndServeTLS(":443","cert.pem","private.key",r))
 }
 func globalMiddleware(next http.Handler) (http.Handler) {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request){

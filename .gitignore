@@ -2,3 +2,5 @@
 gopasted.exe
 gopasted
 content/*
+*.pem
+*.key
