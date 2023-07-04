@@ -2,7 +2,7 @@
 
 Backend untuk project code share (seperti Pastebin) dengan bahasa pemrograman GO dan MongoDB sebagai databasenya. Program ini saya buat untuk tujuan belajar bahasa pemrograman GO dan MongoDB.
 
-- Frontend: (https://github.com/hsnfirdaus/react-pasted)[https://github.com/hsnfirdaus/react-pasted]
+- Frontend: [https://github.com/hsnfirdaus/react-pasted](https://github.com/hsnfirdaus/react-pasted)
 
 ## Menjalankan Project
 
